@@ -285,7 +285,7 @@
             display: none;
             align-items: center;
             justify-content: center;
-            z-index: 5000;
+            z-index: 10000;
         }
 
         .modal-overlay.active {
@@ -300,6 +300,8 @@
             max-width: 600px;
             max-height: 90vh;
             overflow-y: auto;
+            position: relative;
+            z-index: 10001;
         }
 
         .modal-header {
@@ -843,7 +845,7 @@
                     <button class="btn btn-success" onclick="exportToCSV()">
                         <i class="fas fa-file-csv"></i> Export CSV
                     </button>
-                    <button type="button" class="btn btn-primary" onclick="openProductModal(); console.log('Button clicked')">
+                    <button type="button" class="btn btn-primary" onclick="openProductModal()">
                         <i class="fas fa-plus"></i> Add Product
                     </button>
                 </div>
@@ -1283,7 +1285,7 @@
                     productId: item.id,
                     name: item.name,
                     sku: item.sku,
-                    qty: item.qartQty,
+                    qty: item.cartQty,
                     price: item.sellingPrice,
                     total: item.sellingPrice * item.cartQty
                 })),
